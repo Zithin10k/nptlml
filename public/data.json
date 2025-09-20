@@ -1,0 +1,1902 @@
+[
+    {
+      "assignmentnumber": "1",
+      "questionnumber": "1",
+      "question": "Which of the following are classification tasks?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "Find the gender of a person by analyzing his writing style",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "Predict the price of a house based on floor area, number of rooms etc.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "Predict the temperature for the next day",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "Predict the number of copies of a book that will be sold this month",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "1",
+      "questionnumber": "2",
+      "question": "Which of the following is a not categorical feature?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "Gender of a person",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "Height of a person",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "Types of Mountains",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "Nationality of a person",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "1",
+      "questionnumber": "3",
+      "question": "Which of the following tasks is NOT a suitable machine learning task?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "Finding the shortest path between a pair of nodes in a graph",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "Predicting if a stock price will rise or fall",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "Predicting the price of petroleum",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "Grouping mails as spams or non-spams",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "1",
+      "questionnumber": "4",
+      "question": "Suppose I have 10,000 emails in my mailbox out of which 200 are spams. The spam detection system detects 150 mails as spams, out of which 50 are actually spams. What is the precision and recall of my spam detection system?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "Precision = 33.333%, Recall = 25%",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "Precision = 25%, Recall = 33.33%",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "Precision = 33.33%, Recall = 75%",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "Precision = 75%, Recall = 33.33%",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "1",
+      "questionnumber": "5",
+      "question": "A feature F1 can take certain values: A, B, C, D, E, F and represents the grade of students from a college. Which of the following statements is true in the following case?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "Feature F1 is an example of a nominal variable.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "Feature F1 is an example of ordinal variables.",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "It doesn't belong to any of the above categories.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "Both of these",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "1",
+      "questionnumber": "6",
+      "question": "One of the most common uses of Machine Learning today is in the domain of Robotics. Robotic tasks include a multitude of ML methods tailored towards navigation, robotic control and a number of other tasks. Robotic control includes controlling the actuators available to the robotic system. An example of this is control of a painting arm in automotive industries. The robotic arm must be able to paint every corner in the automotive parts while minimizing the quantity of paint wasted in the process. Which of the following learning paradigms would you select for training such a robotic arm?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "Supervised learning",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "Unsupervised learning",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "Combination of supervised and unsupervised learning",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "Reinforcement learning",
+          "iscorrect": true
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "1",
+      "questionnumber": "7",
+      "question": "How many Boolean functions are possible with n features?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "$(2^{2^{N}})$",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "$(2^{N})$",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "$(N^{2})$",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "$(4^{N})$",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "1",
+      "questionnumber": "8",
+      "question": "What is the use of Validation dataset in Machine Learning?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "To train the machine learning model.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "To evaluate the performance of the machine learning model",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "To tune the hyperparameters of the machine learning model",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "None of the above.",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "1",
+      "questionnumber": "9",
+      "question": "Regarding bias and variance, which of the following statements are true? (Here 'high' and 'low' are relative to the ideal model.)",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "Models which overfit have a high bias.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "Models which overfit have a low bias.",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "Models which underfit have a high variance.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "Models which underfit have a low variance.",
+          "iscorrect": true
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "1",
+      "questionnumber": "10",
+      "question": "Identify whether the following statement is true or false? \"Occam's Razor is an example of Inductive Bias\"",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "True",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "False",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "2",
+      "questionnumber": "1",
+      "question": "In a binary classification problem, out of 30 data points 12 belong to class I and 18 belong to class II. What is the entropy of the data set?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "0.97",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "0",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "1",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "0.67",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "2",
+      "questionnumber": "2",
+      "question": "Decision trees can be used for the problems where",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "the attributes are categorical.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "the attributes are numeric valued.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "the attributes are discrete valued.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "In all the above cases.",
+          "iscorrect": true
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "2",
+      "questionnumber": "3",
+      "question": "Which of the following is false?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "Variance is the error of the trained classifier with respect to the best classifier in the concept class.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "Variance depends on the training set size.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "Variance increases with more training data.",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "Variance increases with more complicated classifiers.",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "2",
+      "questionnumber": "4",
+      "question": "In linear regression, our hypothesis is $h_{\\theta}(x) = \\theta_0 + \\theta_1x$. The training data is given in the table. If the cost function is $J(\\theta) = \\frac{1}{2m} \\sum_{i=1}^{m} (h_{\\theta}(x_i) - y_i)^2$, where m is no. of training data points. What is the value of $J(\\theta)$ when $\\theta=(1,1)$? \n\n| X  | y |\n|----|---|\n| 6  | 7 |\n| 5  | 4 |\n| 10 | 9 |\n| 3  | 4 |",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "0",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "1",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "2",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "0.5",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "2",
+      "questionnumber": "5",
+      "question": "The value of information gain in the following decision tree is:",
+      "image": "Assignment week 2.pdf-2",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "0.380",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "0.620",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "0.190",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "0.477",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "2",
+      "questionnumber": "6",
+      "question": "What is true for Stochastic Gradient Descent?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "In every iteration, model parameters are updated for multiple training samples",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "In every iteration, model parameters are updated for one training sample",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "In every iteration, model parameters are updated for all training samples",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "None of the above",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "2",
+      "questionnumber": "7",
+      "question": "ISRO wants to discriminate between Martians (M) and Humans (H) based on the following features: Green ∈ {N,Y}, Legs ∈ {2,3}, Height ∈ {S,T}, Smelly ∈ {N,Y}. The training data is given below. The entropy of the entire dataset is:",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "0.5",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "1",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "0",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "0.1",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "2",
+      "questionnumber": "8",
+      "question": "Based on the data from question 7, which attribute will be the root of the decision tree?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "Green",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "Legs",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "Height",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "Smelly",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "2",
+      "questionnumber": "9",
+      "question": "In Linear Regression the output is:",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "Discrete",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "Continuous and always lies in a finite range",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "Continuous",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "May be discrete or continuous",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "2",
+      "questionnumber": "10",
+      "question": "Identify whether the following statement is true or false? 'Overfitting is more likely when the set of training data is small'",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "True",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "False",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "3",
+      "questionnumber": "1",
+      "question": "Suppose, you have given data where x and y are the 2 input variables and Class is the dependent variable. You want to predict the class of new data point x=1 and y=1 using euclidean distance in 3-NN. To which class does the new data point belong?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "+ Class",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "- Class",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "Can't say",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "None of these",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "3",
+      "questionnumber": "2",
+      "question": "Imagine you are dealing with a 10 class classification problem. What is the maximum number of discriminant vectors that can be produced by LDA?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "20",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "14",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "9",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "10",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "3",
+      "questionnumber": "3",
+      "question": "Fill in the blanks: K-Nearest Neighbor is a ________ algorithm.",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "Non-parametric, eager",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "Parametric, eager",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "Non-parametric, lazy",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "Parametric, lazy",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "3",
+      "questionnumber": "4",
+      "question": "Which of the following statements is True about the KNN algorithm?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "KNN algorithm does more computation on test time rather than train time.",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "KNN algorithm does lesser computation on test time rather than train time.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "KNN algorithm does an equal amount of computation on test time and train time.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "None of these.",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "3",
+      "questionnumber": "5",
+      "question": "Which of the following necessitates feature reduction in machine learning?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "Irrelevant and redundant features",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "Curse of dimensionality",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "Limited computational resources.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "All of the above",
+          "iscorrect": true
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "3",
+      "questionnumber": "6",
+      "question": "When there is noise in data, which of the following options would improve the performance of the KNN algorithm?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "Increase the value of k",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "Decrease the value of k",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "Changing value of k will not change the effect of the noise",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "None of these",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "3",
+      "questionnumber": "7",
+      "question": "Find the value of the Pearson's correlation coefficient of X and Y from the data in the following table. \n\n| AGE (X) | GLUCOSE (Y) |\n|---|---|\n| 43 | 99 |\n| 21 | 65 |\n| 25 | 79 |\n| 42 | 75 |",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "0.47",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "0.68",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "1",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "0.33",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "3",
+      "questionnumber": "8",
+      "question": "Which of the following is false about PCA?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "PCA is a supervised method",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "It identifies the directions that data have the largest variance",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "Maximum number of principal components <= number of features",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "All principal components are orthogonal to each other",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "3",
+      "questionnumber": "9",
+      "question": "In user-based collaborative filtering based recommendation, the items are recommended based on:",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "Similar users",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "Similar items",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "Both of the above",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "None of the above",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "3",
+      "questionnumber": "10",
+      "question": "Identify whether the following statement is true or false? 'PCA can be used for projecting and visualizing data in lower dimensions.'",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "TRUE",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "FALSE",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "4",
+      "questionnumber": "1",
+      "question": "A man is known to speak the truth 2 out of 3 times. He throws a die and reports that the number obtained is 4. Find the probability that the number obtained is actually 4:",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "2/3",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "3/4",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "5/22",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "2/7",
+          "iscorrect": true
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "4",
+      "questionnumber": "2",
+      "question": "Consider the following graphical model, mark which of the following pair of random variables are independent given no evidence?",
+      "image": "Assignment week 4.pdf-0",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "a,b",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "c,d",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "e,d",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "c,e",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "4",
+      "questionnumber": "3",
+      "question": "Two cards are drawn at random from a deck of 52 cards without replacement. What is the probability of drawing a 2 and an Ace in that order?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "4/51",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "1/13",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "4/256",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "4/663",
+          "iscorrect": true
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "4",
+      "questionnumber": "4",
+      "question": "Consider the following Bayesian network. The random variables given in the model are modeled as discrete variables (Rain=R, Sprinkler=S and Wet Grass=W) and the corresponding probability values are given below. Calculate P(S|W,R).\n\nP(R)=0.1\nP(S)=0.2\nP(W|R,S)=0.8\nP(W|R,¬S)=0.7\nP(W|¬R,S)=0.6\nP(W|¬R,¬S)=0.5",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "1",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "0.5",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "0.22",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "0.78",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "4",
+      "questionnumber": "5",
+      "question": "What is the naive assumption in a Naive Bayes Classifier?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "All the classes are independent of each other",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "All the features of a class are independent of each other",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "The most probable feature for a class is the most important feature to be considered for classification",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "All the features of a class are conditionally dependent on each other.",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "4",
+      "questionnumber": "6",
+      "question": "A drug test (random variable T) has 1% false positives (i.e., 1% of those not taking drugs show positive in the test), and 5% false negatives (i.e., 5% of those taking drugs test negative). Suppose that 2% of those tested are taking drugs. Determine the probability that somebody who tests positive is actually taking drugs (random variable D).",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "0.66",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "0.34",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "0.50",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "0.91",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "4",
+      "questionnumber": "7",
+      "question": "It is given that P(A|B)=2/3 and P(A|¬B)=1/4. Compute the value of P(B|A).",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "1/2",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "2/3",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "3/4",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "Not enough information.",
+          "iscorrect": true
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "4",
+      "questionnumber": "8",
+      "question": "A patient goes to a doctor with symptoms S1, S2 and S3. The doctor suspects disease D1 and D2 and constructs a Bayesian network for the relation among the disease and symptoms as shown in the figure. What is the joint probability distribution in terms of conditional probabilities?",
+      "image": "Assignment week 4.pdf-4",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "P(D1)*P(D2|D1)*P(S1|D1)*P(S2|D1)*P(S3|D2)",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "P(D1)*P(D2)*P(S1|D1)*P(S2|D1)*P(S3|D1,D2)",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "P(D1)*P(D2)*P(S1|D2)*P(S2|D2)*P(S3|D2)",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "P(D1)*P(D2)*P(S1|D1)*P(S2|D1,D2)*P(S3|D2)",
+          "iscorrect": true
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "4",
+      "questionnumber": "9",
+      "question": "Based on the data from question 8, suppose P(D1)=0.5, P(D2)=0.6, P(S1|D1)=0.4 and P(S1|D1')=0.6. Find P(S1).",
+      "image": "Assignment week 4.pdf-4",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "0.14",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "0.36",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "0.50",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "0.66",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "4",
+      "questionnumber": "10",
+      "question": "In a Bayesian network a node with only outgoing edge(s) represents",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "a variable conditionally independent of the other variables.",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "a variable dependent on its siblings.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "a variable whose dependency is uncertain.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "None of the above.",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "5",
+      "questionnumber": "1",
+      "question": "What would be the ideal complexity of the curve which can be used for separating the two classes shown in the image below?",
+      "image": "Assignment week 5.pdf-0",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "Linear",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "Quadratic",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "Cubic",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "insufficient data to draw conclusion",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "5",
+      "questionnumber": "2",
+      "question": "Which of the following option is true?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "Linear regression error values have to normally distributed but not in the case of the logistic regression",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "Logistic regression values have to be normally distributed but not in the case of the linear regression",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "Both linear and logistic regression error values have to be normally distributed",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "Both linear and logistic regression error values need not to be normally distributed",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "5",
+      "questionnumber": "3",
+      "question": "Which of the following methods do we use to best fit the data in Logistic Regression?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "Manhattan distance",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "Maximum Likelihood",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "Jaccard distance",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "Both A and B",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "5",
+      "questionnumber": "4",
+      "question": "Imagine, you have given the below graph of logistic regression which shows the relationships between cost function and number of iterations for 3 different learning rate values (different colors are showing different curves at different learning rates). You forgot to save the value of different learning rates for this graph. Now, you want to find out the relation between the leaning rate values of these curve. Which of the following will be the true relation? Note: 1. The learning rate for blue is L1. 2. The learning rate for red is L2. 3. The learning rate for green is L3.",
+      "image": "Assignment week 5.pdf-1",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "L1 > L2 > L3",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "L1 < L2 < L3",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "L3 > L2 > L1",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "None of these",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "5",
+      "questionnumber": "5",
+      "question": "State whether True or False. After training an SVM, we can discard all examples which are not support vectors and can still classify new examples.",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "TRUE",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "FALSE",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "5",
+      "questionnumber": "6",
+      "question": "Suppose you are dealing with 3 class classification problem and you want to train a SVM model on the data for that you are using One-vs-all method. How many times we need to train our SVM model in such case?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "1",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "2",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "3",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "4",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "5",
+      "questionnumber": "7",
+      "question": "What is/are true about kernel in SVM? 1. Kernel function map low dimensional data to high dimensional space. 2. It's a similarity function.",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "1",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "2",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "1 and 2",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "None of these.",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "5",
+      "questionnumber": "8",
+      "question": "Suppose you are using RBF kernel in SVM with high Gamma value. What does this signify?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "The model would consider even far away points from hyperplane for modelling.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "The model would consider only the points close to the hyperplane for modelling.",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "The model would not be affected by distance of points from hyperplane for modelling.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "None of the above",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "5",
+      "questionnumber": "9",
+      "question": "Below are the labelled instances of 2 classes and hand drawn decision boundaries for logistic regression. Which of the following figure demonstrates overfitting of the training data?",
+      "image": "Assignment week 5.pdf-4",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "A",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "B",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "C",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "None of these",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "5",
+      "questionnumber": "10",
+      "question": "What do you conclude after seeing the visualization in previous question? C1. The training error in first plot is higher as compared to the second and third plot. C2. The best model for this regression problem is the last (third) plot because it has minimum training error (zero). C3. Out of the 3 models, the second model is expected to perform best on unseen data. C4. All will perform similarly because we have not seen the test data.",
+      "image": "Assignment week 5.pdf-4",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "C1 and C2",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "C1 and C3",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "C2 and C3",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "C4",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "6",
+      "questionnumber": "1",
+      "question": "In training a neural network, we notice that the loss does not increase in the first few starting epochs: What is the reason for this?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "The learning Rate is low.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "Regularization Parameter is High.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "Stuck at the Local Minima.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "All of these could be the reason.",
+          "iscorrect": true
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "6",
+      "questionnumber": "2",
+      "question": "What is the sequence of the following tasks in a perceptron? I) Initialize the weights of the perceptron randomly. II) Go to the next batch of data set. III) If the prediction does not match the output, change the weights. IV) For a sample input, compute an output.",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "I, II, III, IV",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "IV, III, II, I",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "III, I, II, IV",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "I, IV, III, II",
+          "iscorrect": true
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "6",
+      "questionnumber": "3",
+      "question": "Suppose you have inputs as x, y, and z with values -2, 5, and -4 respectively. You have a neuron 'q' and neuron 'f' with functions: q=x+y, f=q*z. What is the gradient of F with respect to x, y, and z?",
+      "image": "Assignment week 6.pdf-0",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "(-3, 4, 4)",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "(4, 4, 3)",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "(-4, -4, 3)",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "(3, -4, -4)",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "6",
+      "questionnumber": "4",
+      "question": "A neural network can be considered as multiple simple equations stacked together. Suppose we want to replicate the function for the decision boundary shown in the first image, using two simple inputs h1 and h2 (shown in the other two images). What will be the final equation?",
+      "image": "Assignment week 6.pdf-1",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "(h1 AND NOT h2) OR (NOT h1 AND h2)",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "(h1 OR NOT h2) AND (NOT h1 OR h2)",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "(h1 AND h2) OR (h1 OR h2)",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "None of these",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "6",
+      "questionnumber": "5",
+      "question": "Which of the following is true about model capacity (where model capacity means the ability of neural network to approximate complex functions)?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "As number of hidden layers increase, model capacity increases",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "As dropout ratio increases, model capacity increases",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "As learning rate increases, model capacity increases",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "None of these.",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "6",
+      "questionnumber": "6",
+      "question": "First Order Gradient descent would not work correctly (i.e. may get stuck) in which of the following graphs?",
+      "image": "Assignment week 6.pdf-2",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "Graph A",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "Graph B",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "Graph C",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "None of These.",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "6",
+      "questionnumber": "7",
+      "question": "Which of the following is true? Single layer associative neural networks do not have the ability to I) Perform pattern recognition II) Find the parity of a picture III) Determine whether two or more shapes in a picture are connected or not",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "II and III are true",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "II is true",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "All of the above",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "None of the above",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "6",
+      "questionnumber": "8",
+      "question": "The network that involves backward links from outputs to the inputs and hidden layers is called as",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "Self-organizing Maps",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "Perceptron",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "Recurrent Neural Networks",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "Multi-Layered Perceptron",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "6",
+      "questionnumber": "9",
+      "question": "Intersection of linear hyperplanes in a three-layer network can produce both convex and non-convex surfaces. Is the statement true?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "Yes",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "No",
+          "iscorrect": true
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "6",
+      "questionnumber": "10",
+      "question": "What is meant by the statement 'Backpropagation is a generalized delta rule'?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "Because backpropagation can be extended to hidden layer units",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "Because delta is applied to only to input and output layers, thus making it more generalized.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "It has no significance",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "None of the above.",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "7",
+      "questionnumber": "1",
+      "question": "Which of the following option is / are correct regarding the benefits of ensemble model? 1. Better performance 2. More generalized model 3. Better interpretability",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "1 and 3",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "2 and 3",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "1 and 2",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "1, 2 and 3",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "7",
+      "questionnumber": "2",
+      "question": "In AdaBoost, we give more weights to points having been misclassified in previous iterations. Now, if we introduced a limit or cap on the weight that any point can take (for example, say we introduce a restriction that prevents any point's weight from exceeding a value of 10). Which among the following would be an effect of such a modification?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "We may observe the performance of the classifier reduce as the number of stages increase.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "It makes the final classifier robust to outliers.",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "It may result in lower overall performance.",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "None of these.",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "7",
+      "questionnumber": "3",
+      "question": "Which among the following are some of the differences between bagging and boosting?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "In bagging we use the same classification algorithm for training on each sample of the data, whereas in boosting, we use different classification algorithms on the different training data samples.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "Bagging is easy to parallelize whereas boosting is inherently a sequential process.",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "In bagging we typically use sampling with replacement whereas in boosting, we typically use weighted sampling techniques.",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "In comparison with the performance of a base classifier on a particular dataset, bagging will generally not increase the error whereas as boosting may lead to an increase in the error.",
+          "iscorrect": true
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "7",
+      "questionnumber": "4",
+      "question": "What is the VC-dimension of the class of sphere in a 3-dimensional plane?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "3",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "4",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "5",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "6",
+          "iscorrect": false
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "7",
+      "questionnumber": "5",
+      "question": "Considering the AdaBoost algorithm, which among the following statements is true?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "In each stage, we try to train a classifier which makes accurate predictions on any subset of the data points where the subset size is at least half the size of the data set.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "In each stage, we try to train a classifier which makes accurate predictions on a subset of the data points where the subset contains more of the data points which were misclassified in earlier stages.",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "The weight assigned to an individual classifier depends upon the number of data points correctly classified by the classifier.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "The weight assigned to an individual classifier depends upon the weighted sum error of misclassified points for that classifier.",
+          "iscorrect": true
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "7",
+      "questionnumber": "6",
+      "question": "Suppose the VC dimension of a hypothesis space is 6. Which of the following are true?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "At least one set of 6 points can be shattered by the hypothesis space.",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "Two sets of 6 points can be shattered by the hypothesis space.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "All sets of 6 points can be shattered by the hypothesis space.",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "No set of 7 points can be shattered by the hypothesis space.",
+          "iscorrect": true
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "7",
+      "questionnumber": "7",
+      "question": "Ensembles will yield bad results when there is a significant diversity among the models. Write True or False.",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "True",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "False",
+          "iscorrect": true
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "7",
+      "questionnumber": "8",
+      "question": "Which of the following algorithms are not an ensemble learning algorithm?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "Random Forest",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "Adaboost",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "Gradient Boosting",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "Decision Trees",
+          "iscorrect": true
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "7",
+      "questionnumber": "9",
+      "question": "Which of the following can be true for selecting base learners for an ensemble?",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "Different learners can come from same algorithm with different hyper parameters",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "Different learners can come from different algorithms",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "Different learners can come from different training spaces",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "All of the above.",
+          "iscorrect": true
+        }
+      ]
+    },
+    {
+      "assignmentnumber": "7",
+      "questionnumber": "10",
+      "question": "Generally, an ensemble method works better, if the individual base models have ________? Note: Individual models have accuracy greater than 50%",
+      "image": "",
+      "options": [
+        {
+          "optionnumber": "A",
+          "optiontext": "Less correlation among predictions",
+          "iscorrect": true
+        },
+        {
+          "optionnumber": "B",
+          "optiontext": "High correlation among predictions",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "C",
+          "optiontext": "Correlation does not have an impact on the ensemble output",
+          "iscorrect": false
+        },
+        {
+          "optionnumber": "D",
+          "optiontext": "None of the above.",
+          "iscorrect": false
+        }
+      ]
+    }
+  ]
