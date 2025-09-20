@@ -85,7 +85,7 @@ export default function NameChangeModal({ currentName, onNameChange, onClose }) 
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 touch-manipulation">
+    <div className="fixed inset-0 bg-blue-900 bg-opacity-20 flex items-center justify-center p-4 z-50 touch-manipulation">
       <Card className="w-full max-w-md mx-4 modal-scroll-fix">
         <div className="text-center mb-4 sm:mb-6">
           <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">

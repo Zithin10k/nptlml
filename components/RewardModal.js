@@ -34,7 +34,7 @@ export default function RewardModal({ isOpen, onClose, score, totalQuestions }) 
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+    <div className="fixed inset-0 bg-blue-900 bg-opacity-20 flex items-center justify-center z-50 p-4">
       <div className="bg-white rounded-2xl p-8 max-w-md w-full text-center relative overflow-hidden">
         {/* Background decorations */}
         <div className="absolute inset-0 bg-gradient-to-br from-yellow-100 to-orange-100 opacity-50"></div>
