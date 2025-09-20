@@ -9,14 +9,14 @@ export default function Button({
   className = '',
   fullWidth = false
 }) {
-  // Variant styles - Blue outline theme
+  // Variant styles - Blue outline theme with enhanced text visibility
   const variantClasses = {
-    primary: 'bg-white hover:bg-blue-50 active:bg-blue-100 text-blue-600 border-blue-600 border-2 focus:ring-blue-500',
-    secondary: 'bg-white hover:bg-gray-50 active:bg-gray-100 text-gray-600 border-gray-400 border-2 focus:ring-gray-500',
-    outline: 'bg-white hover:bg-gray-50 active:bg-gray-100 text-gray-700 border-gray-300 border-2 focus:ring-gray-500',
-    success: 'bg-white hover:bg-green-50 active:bg-green-100 text-green-600 border-green-600 border-2 focus:ring-green-500',
-    danger: 'bg-white hover:bg-red-50 active:bg-red-100 text-red-600 border-red-600 border-2 focus:ring-red-500',
-    mega: 'bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-white border-transparent border-2 focus:ring-yellow-500 shadow-lg'
+    primary: 'bg-white hover:bg-blue-50 active:bg-blue-100 text-black border-blue-600 border-2 focus:ring-blue-500 font-bold',
+    secondary: 'bg-white hover:bg-gray-50 active:bg-gray-100 text-black border-gray-400 border-2 focus:ring-gray-500 font-semibold',
+    outline: 'bg-white hover:bg-gray-50 active:bg-gray-100 text-black border-gray-300 border-2 focus:ring-gray-500 font-semibold',
+    success: 'bg-white hover:bg-green-50 active:bg-green-100 text-black border-green-600 border-2 focus:ring-green-500 font-semibold',
+    danger: 'bg-white hover:bg-red-50 active:bg-red-100 text-black border-red-600 border-2 focus:ring-red-500 font-semibold',
+    mega: 'bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black border-transparent border-2 focus:ring-yellow-500 shadow-lg font-bold'
   };
 
   // Size styles with better touch targets

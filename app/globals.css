@@ -702,43 +702,52 @@ html {
   transform: translateY(-2px) !important;
 }
 
-/* Floating nav buttons */
+/* Floating nav buttons with enhanced text visibility */
 .floating-nav-button {
-  background: rgba(59, 130, 246, 0.9) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
   backdrop-filter: blur(8px) !important;
   -webkit-backdrop-filter: blur(8px) !important;
-  border: 1px solid rgba(59, 130, 246, 0.3) !important;
+  border: 2px solid rgba(59, 130, 246, 0.8) !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8) !important;
   transition: all 0.2s ease !important;
 }
 
 .floating-nav-button:hover {
-  background: rgba(37, 99, 235, 0.95) !important;
+  background: rgba(59, 130, 246, 0.1) !important;
+  border-color: rgba(37, 99, 235, 1) !important;
   transform: translateY(-1px) !important;
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
+  color: #000000 !important;
 }
 
 .floating-nav-button:disabled {
-  background: rgba(156, 163, 175, 0.6) !important;
-  border-color: rgba(156, 163, 175, 0.3) !important;
+  background: rgba(255, 255, 255, 0.7) !important;
+  border-color: rgba(156, 163, 175, 0.5) !important;
+  color: rgba(107, 114, 128, 0.8) !important;
   transform: none !important;
   box-shadow: none !important;
 }
 
 .floating-nav-button-outline {
-  background: rgba(255, 255, 255, 0.8) !important;
-  border: 1px solid rgba(59, 130, 246, 0.4) !important;
-  color: #3b82f6 !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 2px solid rgba(59, 130, 246, 0.6) !important;
+  color: #000000 !important;
+  font-weight: 600 !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8) !important;
   backdrop-filter: blur(8px) !important;
   -webkit-backdrop-filter: blur(8px) !important;
 }
 
 .floating-nav-button-outline:hover {
-  background: rgba(59, 130, 246, 0.1) !important;
-  border-color: rgba(59, 130, 246, 0.6) !important;
+  background: rgba(59, 130, 246, 0.05) !important;
+  border-color: rgba(59, 130, 246, 0.8) !important;
+  color: #000000 !important;
 }
 
 .floating-nav-button-outline:disabled {
-  background: rgba(255, 255, 255, 0.5) !important;
-  border-color: rgba(156, 163, 175, 0.3) !important;
-  color: rgba(156, 163, 175, 0.8) !important;
+  background: rgba(255, 255, 255, 0.7) !important;
+  border-color: rgba(156, 163, 175, 0.4) !important;
+  color: rgba(107, 114, 128, 0.7) !important;
 }
