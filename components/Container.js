@@ -1,4 +1,4 @@
-export default function Container({ children, className = '', size = 'default' }) {
+export default function Container({ children, className = '', size = 'default', compact = false }) {
   // Size variants for different container widths with better responsive breakpoints
   const sizeClasses = {
     'sm': 'max-w-2xl',
@@ -8,14 +8,12 @@ export default function Container({ children, className = '', size = 'default' }
     'full': 'max-w-full'
   };
 
+  const paddingClasses = compact ? 'px-2 sm:px-3' : 'px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12';
+
   const containerClasses = `
     ${sizeClasses[size]} 
     mx-auto 
-    px-4 
-    sm:px-6 
-    md:px-8
-    lg:px-10
-    xl:px-12
+    ${paddingClasses}
     ${className}
   `.trim();
 

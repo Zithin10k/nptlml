@@ -7,7 +7,8 @@ const OptionButton = memo(function OptionButton({
   showFeedback, 
   isMultipleChoice, 
   onSelect, 
-  disabled 
+  disabled,
+  compact = false
 }) {
   const handleClick = useCallback(() => {
     if (!disabled) {
@@ -17,7 +18,9 @@ const OptionButton = memo(function OptionButton({
 
   // Memoized button styling based on state
   const buttonClasses = useMemo(() => {
-    let baseClasses = "w-full p-4 sm:p-5 text-left border-2 rounded-lg option-button cursor-pointer hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 touch-manipulation min-h-[56px] sm:min-h-[48px] ";
+    let baseClasses = compact ? 
+      "w-full p-2 text-left border rounded option-button cursor-pointer hover:shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 touch-manipulation min-h-[36px] text-sm " :
+      "w-full p-4 sm:p-5 text-left border-2 rounded-lg option-button cursor-pointer hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 touch-manipulation min-h-[56px] sm:min-h-[48px] ";
     
     // Add animation classes based on state
     if (showFeedback && option.iscorrect) {
@@ -56,8 +59,20 @@ const OptionButton = memo(function OptionButton({
     return baseClasses;
   }, [showFeedback, option.iscorrect, isSelected, disabled]);
 
+  const containerClass = compact ? "mb-1" : "mb-3 sm:mb-4";
+  const spacingClass = compact ? "space-x-2" : "space-x-3 sm:space-x-4";
+  const inputClass = compact ? 
+    "w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500 touch-manipulation" :
+    "w-5 h-5 sm:w-4 sm:h-4 text-blue-600 border-gray-300 focus:ring-blue-500 touch-manipulation";
+  const textClass = compact ?
+    "text-xs leading-tight break-words" :
+    "text-base sm:text-sm leading-relaxed break-words";
+  const numberClass = compact ?
+    "font-medium text-xs text-gray-800 mr-1" :
+    "font-medium text-base sm:text-sm text-gray-800 mr-2";
+
   return (
-    <div className="mb-3 sm:mb-4">
+    <div className={containerClass}>
       <button
         type="button"
         onClick={handleClick}
@@ -72,15 +87,15 @@ const OptionButton = memo(function OptionButton({
         aria-pressed={isSelected}
         aria-describedby={`option-${option.optionnumber}-description`}
       >
-        <div className="flex items-start space-x-3 sm:space-x-4">
+        <div className={`flex items-start ${spacingClass}`}>
           {/* Input element for visual consistency */}
-          <div className="flex-shrink-0 mt-1">
+          <div className="flex-shrink-0 mt-0.5">
             {isMultipleChoice ? (
               <input
                 type="checkbox"
                 checked={isSelected}
                 onChange={() => {}} // Handled by button click
-                className="w-5 h-5 sm:w-4 sm:h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 touch-manipulation"
+                className={`${inputClass} ${compact ? 'rounded' : 'rounded'}`}
                 disabled={disabled}
                 tabIndex={-1}
               />
@@ -89,7 +104,7 @@ const OptionButton = memo(function OptionButton({
                 type="radio"
                 checked={isSelected}
                 onChange={() => {}} // Handled by button click
-                className="w-5 h-5 sm:w-4 sm:h-4 text-blue-600 border-gray-300 focus:ring-blue-500 touch-manipulation"
+                className={inputClass}
                 disabled={disabled}
                 tabIndex={-1}
               />
@@ -98,10 +113,10 @@ const OptionButton = memo(function OptionButton({
           
           {/* Option content */}
           <div className="flex-1 min-w-0">
-            <span className="font-medium text-base sm:text-sm text-gray-800 mr-2">
+            <span className={numberClass}>
               {option.optionnumber}.
             </span>
-            <span className="text-base sm:text-sm leading-relaxed break-words" id={`option-${option.optionnumber}-description`}>
+            <span className={textClass} id={`option-${option.optionnumber}-description`}>
               <LaTeXRenderer>{option.optiontext}</LaTeXRenderer>
             </span>
           </div>

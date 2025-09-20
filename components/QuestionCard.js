@@ -9,7 +9,8 @@ const QuestionCard = memo(function QuestionCard({
   showFeedback = false,
   mode = 'test-easy',
   onAnswerSelect,
-  disabled = false
+  disabled = false,
+  compact = false
 }) {
   // Memoized calculations to prevent unnecessary recalculations
   const correctAnswers = useMemo(() =>
@@ -49,24 +50,40 @@ const QuestionCard = memo(function QuestionCard({
     [mode, showFeedback]
   );
 
+  const containerClass = compact ? 
+    "bg-white rounded border p-2 mb-2" : 
+    "bg-white rounded-lg shadow-lg p-4 sm:p-6 mb-4 sm:mb-6 animate-fadeIn";
+
+  const questionClass = compact ?
+    "mb-2" :
+    "mb-4 sm:mb-6";
+
+  const titleClass = compact ?
+    "text-sm font-semibold text-gray-800 leading-tight mb-1" :
+    "text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 leading-relaxed mb-3 sm:mb-4";
+
+  const optionsClass = compact ?
+    "options-horizontal" :
+    "space-y-2";
+
   return (
-    <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 mb-4 sm:mb-6 animate-fadeIn">
+    <div className={containerClass}>
       {/* Question text */}
-      <div className="mb-4 sm:mb-6">
-        <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 leading-relaxed mb-3 sm:mb-4">
+      <div className={questionClass}>
+        <h2 className={titleClass}>
           <LaTeXRenderer>{question.question}</LaTeXRenderer>
         </h2>
 
         {/* Question image if present */}
         {question.image && question.image.trim() !== '' && (
-          <div className="mb-4 flex justify-center">
+          <div className={compact ? "mb-2 flex justify-center" : "mb-4 flex justify-center"}>
             <div className="relative max-w-full">
               <Image
                 src={`/${question.image}`}
                 alt="Question illustration"
-                width={600}
-                height={400}
-                className="rounded-lg shadow-sm border border-gray-200"
+                width={compact ? 300 : 600}
+                height={compact ? 200 : 400}
+                className="rounded border border-gray-200"
                 style={{ width: 'auto', height: 'auto', maxWidth: '100%' }}
                 priority={false}
                 placeholder="blur"
@@ -81,17 +98,19 @@ const QuestionCard = memo(function QuestionCard({
       </div>
 
       {/* Selection type indicator */}
-      <div className="mb-4 sm:mb-6">
-        <p className="text-sm sm:text-base text-gray-600 font-medium">
-          {isMultipleChoice ?
-            'Select all correct answers:' :
-            'Select the correct answer:'
-          }
-        </p>
-      </div>
+      {!compact && (
+        <div className="mb-4 sm:mb-6">
+          <p className="text-sm sm:text-base text-gray-600 font-medium">
+            {isMultipleChoice ?
+              'Select all correct answers:' :
+              'Select the correct answer:'
+            }
+          </p>
+        </div>
+      )}
 
       {/* Answer options */}
-      <div className="space-y-2">
+      <div className={optionsClass}>
         {question.options.map((option) => (
           <OptionButton
             key={option.optionnumber}
@@ -102,12 +121,13 @@ const QuestionCard = memo(function QuestionCard({
             isMultipleChoice={isMultipleChoice}
             onSelect={handleAnswerSelect}
             disabled={disabled}
+            compact={compact}
           />
         ))}
       </div>
 
-      {/* Selection summary for multiple choice */}
-      {isMultipleChoice && selectedAnswers.length > 0 && (
+      {/* Selection summary for multiple choice - only show if not compact */}
+      {!compact && isMultipleChoice && selectedAnswers.length > 0 && (
         <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-blue-50 rounded-lg border border-blue-200">
           <p className="text-sm sm:text-base text-blue-800">
             <span className="font-medium">Selected:</span> {selectedAnswers.join(', ')}

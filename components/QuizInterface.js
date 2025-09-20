@@ -258,144 +258,98 @@ export default function QuizInterface({
 
 
   return (
-    <Container>
-      <div className="min-h-screen py-8 scroll-container">
-        {/* Header */}
-        <div className={`mb-6 sm:mb-8 ${customTheme ? `bg-gradient-to-r ${customTheme.background} p-4 rounded-lg` : ''}`}>
-          <div className="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:items-center sm:justify-between mb-4">
-            <div className="text-center sm:text-left">
-              <h1 className={`text-xl sm:text-2xl lg:text-3xl font-bold mb-1 leading-tight ${
-                customTheme ? 'text-gray-800' : 'text-gray-900'
-              }`}>
+    <Container compact={true} size="full">
+      <div className="single-viewport">
+        {/* Compact Header */}
+        <div className="single-viewport-header">
+          <div className="flex items-center justify-between mb-2">
+            <div>
+              <h1 className="compact-title text-gray-900">
                 {title || `Assignment ${assignment || assignmentNumber} - ${getModeDisplayName(mode)}`}
               </h1>
-              {subtitle && (
-                <p className="text-sm sm:text-base text-gray-700 mb-2">
-                  {subtitle}
-                </p>
-              )}
-              <p className="text-sm sm:text-base text-gray-600">
-                Time: {timeDisplay}
-              </p>
+              <div className="flex items-center gap-4 text-xs text-gray-600">
+                <span>Time: {timeDisplay}</span>
+                <span>Q{quizState.currentQuestionIndex + 1}/{quizState.questions.length}</span>
+              </div>
             </div>
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-2">
+            <div className="flex gap-1">
               {(assignment !== 'mega' && assignmentNumber !== 'mega') && (
                 <Button 
                   onClick={handleBackToModeSelection} 
                   variant="outline" 
                   size="sm"
-                  className="w-full sm:w-auto min-h-[44px] touch-manipulation"
+                  className="px-2 py-1 text-xs"
                 >
-                  Mode Selection
+                  Mode
                 </Button>
               )}
               <Button 
                 onClick={handleBackToHome} 
                 variant="outline" 
                 size="sm"
-                className="w-full sm:w-auto min-h-[44px] touch-manipulation"
+                className="px-2 py-1 text-xs"
               >
                 Home
               </Button>
             </div>
           </div>
 
-          {/* Progress Bar */}
+          {/* Compact Progress Bar */}
           {showProgress && (
-            <ProgressBar
-              current={quizState.currentQuestionIndex + 1}
-              total={quizState.questions.length}
-              percentage={progressPercentage}
-              customTheme={customTheme}
+            <div className="w-full bg-gray-200 rounded-full h-1.5">
+              <div 
+                className="bg-blue-600 h-1.5 rounded-full transition-all duration-300"
+                style={{ width: `${progressPercentage}%` }}
+              ></div>
+            </div>
+          )}
+        </div>
+
+        {/* Question Content */}
+        <div className="single-viewport-content">
+          {currentQuestion && (
+            <QuestionCard
+              question={currentQuestion}
+              selectedAnswers={currentAnswer}
+              showFeedback={quizState.showFeedback}
+              mode={quizState.mode}
+              onAnswerSelect={handleAnswerSelect}
+              disabled={quizState.mode !== 'learn' && quizState.showFeedback}
+              compact={true}
             />
           )}
         </div>
 
-        {/* Question Card */}
-        {currentQuestion && (
-          <QuestionCard
-            question={currentQuestion}
-            selectedAnswers={currentAnswer}
-            showFeedback={quizState.showFeedback}
-            mode={quizState.mode}
-            onAnswerSelect={handleAnswerSelect}
-            disabled={quizState.mode !== 'learn' && quizState.showFeedback}
-          />
-        )}
-
-        {/* Navigation Controls */}
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-between items-stretch sm:items-center mt-6 sm:mt-8">
-          {/* Previous Button */}
-          <div className="w-full sm:w-auto order-2 sm:order-1">
+        {/* Compact Navigation Footer */}
+        <div className="single-viewport-footer">
+          <div className="flex justify-between items-center gap-2">
             <Button
               onClick={handlePrevious}
               disabled={!canGoPrevious}
               variant="outline"
-              className="w-full sm:w-auto min-h-[48px] sm:min-h-[44px] touch-manipulation text-base sm:text-sm"
-              onKeyDown={(e) => {
-                if (e.key === 'ArrowLeft' && canGoPrevious) {
-                  handlePrevious();
-                }
-              }}
+              className="px-3 py-1.5 text-sm"
             >
-              ← Previous
+              ← Prev
             </Button>
-          </div>
 
-          {/* Center buttons for learn mode */}
-          {quizState.mode === 'learn' && (
-            <div className="flex gap-2 w-full sm:w-auto order-3 sm:order-2">
+            {quizState.mode === 'learn' && (
               <Button
                 onClick={handleSkip}
                 variant="secondary"
-                className="flex-1 sm:flex-none min-h-[48px] sm:min-h-[44px] touch-manipulation text-base sm:text-sm"
+                className="px-3 py-1.5 text-sm"
               >
                 Skip
               </Button>
-            </div>
-          )}
+            )}
 
-          {/* Next Button */}
-          <div className="w-full sm:w-auto order-1 sm:order-3">
             <Button
               onClick={handleNext}
               disabled={!canGoNext}
               variant="primary"
-              className="w-full sm:w-auto min-h-[48px] sm:min-h-[44px] touch-manipulation text-base sm:text-sm font-semibold"
-              onKeyDown={(e) => {
-                if (e.key === 'ArrowRight' && canGoNext) {
-                  handleNext();
-                } else if (e.key === 'Enter' && canGoNext) {
-                  handleNext();
-                }
-              }}
+              className="px-3 py-1.5 text-sm font-semibold"
             >
               {nextButtonText} →
             </Button>
-          </div>
-        </div>
-
-        {/* Mode-specific instructions */}
-        <div className="mt-6 sm:mt-8 p-4 sm:p-6 bg-gray-50 rounded-lg">
-          <div className="text-sm sm:text-base text-gray-600 leading-relaxed">
-            {quizState.mode === 'learn' && (
-              <p>
-                <strong className="text-gray-800">Learn Mode:</strong> Correct answers are highlighted in green. 
-                Use this mode to study and memorize the material.
-              </p>
-            )}
-            {quizState.mode === 'test-easy' && (
-              <p>
-                <strong className="text-gray-800">Test Easy:</strong> Questions appear in their original order. 
-                Select your answer and click &quot;Show Answer&quot; to see the correct response.
-              </p>
-            )}
-            {quizState.mode === 'test-difficult' && (
-              <p>
-                <strong className="text-gray-800">Test Difficult:</strong> Questions and answer options are shuffled. 
-                Select your answer and click &quot;Show Answer&quot; to see the correct response.
-              </p>
-            )}
           </div>
         </div>
       </div>
