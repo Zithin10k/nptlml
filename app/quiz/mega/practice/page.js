@@ -13,6 +13,7 @@ import Container from '../../../../components/Container';
 import { loadQuestions } from '../../../../utils/dataLoader';
 import { shuffleArray } from '../../../../utils/shuffleUtils';
 import { getUserName } from '../../../../utils/storageUtils';
+import { trackPageView } from '../../../../utils/analytics';
 
 export default function MegaTestPage() {
   const router = useRouter();
@@ -53,6 +54,13 @@ export default function MegaTestPage() {
 
     loadMegaTestQuestions();
   }, []);
+
+  // Track page view when mega test loads successfully
+  useEffect(() => {
+    if (!isLoading && !error && questions.length > 0) {
+      trackPageView(window.location.href, userName);
+    }
+  }, [isLoading, error, questions.length, userName]);
 
   const handleQuizComplete = (score, totalQuestions, answers) => {
     setFinalScore(score);

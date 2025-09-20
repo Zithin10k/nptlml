@@ -5,6 +5,7 @@
 
 import { useState } from 'react';
 import { storeUserName, clearUserName } from '../utils/storageUtils';
+import { trackNameChange } from '../utils/analytics';
 import Button from './Button';
 import Card from './Card';
 
@@ -42,6 +43,9 @@ export default function NameChangeModal({ currentName, onNameChange, onClose }) 
       const success = storeUserName(name.trim());
       
       if (success) {
+        // Track name change
+        trackNameChange(currentName, name.trim());
+        
         // Call the callback with the new name
         onNameChange(name.trim());
         onClose();
@@ -71,6 +75,9 @@ export default function NameChangeModal({ currentName, onNameChange, onClose }) 
       const success = clearUserName();
       
       if (success) {
+        // Track name clearing
+        trackNameChange(currentName, null);
+        
         onNameChange('');
         onClose();
       } else {

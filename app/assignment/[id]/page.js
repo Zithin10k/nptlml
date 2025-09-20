@@ -13,6 +13,8 @@ import ModeSelector from '../../../components/ModeSelector';
 import { loadQuestions } from '../../../utils/dataLoader';
 import { filterQuestionsByAssignment } from '../../../utils/questionFilter';
 import { isValidAssignment, navigate } from '../../../utils/navigationUtils';
+import { getUserName } from '../../../utils/storageUtils';
+import { trackPageView } from '../../../utils/analytics';
 
 export default function AssignmentPage() {
   const router = useRouter();
@@ -42,7 +44,7 @@ export default function AssignmentPage() {
       try {
         const questions = await loadQuestions();
         const assignmentQuestions = filterQuestionsByAssignment(questions, assignmentNumber);
-        
+
         if (assignmentQuestions.length === 0) {
           setValidationError(`Assignment ${assignmentNumber} has no available questions`);
           setHasQuestions(false);
@@ -59,6 +61,14 @@ export default function AssignmentPage() {
 
     validateAssignment();
   }, [assignmentNumber, isValidAssignmentNumber]);
+
+  // Track page view when component mounts
+  useEffect(() => {
+    if (!isValidating && hasQuestions) {
+      const userName = getUserName();
+      trackPageView(window.location.href, userName);
+    }
+  }, [isValidating, hasQuestions]);
 
   // Loading state
   if (isValidating) {
@@ -101,7 +111,7 @@ export default function AssignmentPage() {
   return (
     <Container>
       <div className="min-h-screen py-8">
-        <ModeSelector 
+        <ModeSelector
           assignmentNumber={assignmentNum}
           onBack={handleBack}
         />

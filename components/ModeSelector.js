@@ -7,6 +7,8 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import { getUserName } from '../utils/storageUtils';
+import { trackModeSelection } from '../utils/analytics';
 import Card from './Card';
 import Button from './Button';
 import { navigate } from '../utils/navigationUtils';
@@ -54,6 +56,10 @@ export default function ModeSelector({ assignmentNumber, onBack }) {
   const router = useRouter();
 
   const handleModeSelect = (mode) => {
+    // Track mode selection
+    const userName = getUserName();
+    trackModeSelection(assignmentNumber, `Assignment ${assignmentNumber}`, mode, userName);
+    
     // Navigate to quiz interface with assignment and mode parameters
     navigate.toQuiz(router, assignmentNumber, mode);
   };

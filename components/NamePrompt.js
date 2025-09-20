@@ -5,6 +5,7 @@
 
 import { useState } from 'react';
 import { storeUserName } from '../utils/storageUtils';
+import { trackNameChange } from '../utils/analytics';
 import Button from './Button';
 import Card from './Card';
 
@@ -42,6 +43,9 @@ export default function NamePrompt({ onNameSubmit }) {
       const success = storeUserName(name.trim());
       
       if (success) {
+        // Track name change (first time user)
+        trackNameChange(null, name.trim());
+        
         // Call the callback with the stored name
         onNameSubmit(name.trim());
       } else {

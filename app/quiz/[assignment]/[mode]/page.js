@@ -17,6 +17,8 @@ import { loadQuestions, DataLoadError, DataValidationError } from '../../../../u
 import { filterQuestionsByAssignment } from '../../../../utils/questionFilter';
 import { prepareQuestionsForMode } from '../../../../utils/shuffleUtils';
 import { validateQuizParams, navigate } from '../../../../utils/navigationUtils';
+import { getUserName } from '../../../../utils/storageUtils';
+import { trackPageView } from '../../../../utils/analytics';
 
 export default function QuizPage() {
   const router = useRouter();
@@ -87,6 +89,14 @@ export default function QuizPage() {
 
     loadAndPrepareQuestions();
   }, [assignment, mode, isValidParams]);
+
+  // Track page view when quiz loads successfully
+  useEffect(() => {
+    if (!loading && !error && questions) {
+      const userName = getUserName();
+      trackPageView(window.location.href, userName);
+    }
+  }, [loading, error, questions]);
 
   // Handle quiz completion
   const handleQuizComplete = ({ quizState, timeElapsed }) => {

@@ -10,6 +10,7 @@ import { useState, useEffect } from 'react';
 import { getUserName, isFirstTimeUser } from '../utils/storageUtils';
 import { getPersonalizedGreeting } from '../utils/personalizationUtils';
 import { loadQuestions, DataLoadError, DataValidationError } from '../utils/dataLoader';
+import { trackPageView } from '../utils/analytics';
 import NamePrompt from './NamePrompt';
 import NameChangeModal from './NameChangeModal';
 import Container from './Container';
@@ -123,6 +124,13 @@ export default function HomePage() {
 
     initializeApp();
   }, []);
+
+  // Track page view when component mounts and when userName changes
+  useEffect(() => {
+    if (!isLoading) {
+      trackPageView(window.location.href, userName);
+    }
+  }, [userName, isLoading]);
 
   const handleNameSubmit = (name) => {
     setUserName(name);

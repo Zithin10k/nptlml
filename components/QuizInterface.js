@@ -15,6 +15,14 @@ import Container from './Container';
 import ResultsScreen from './ResultsScreen';
 import { navigate, getModeDisplayName } from '../utils/navigationUtils';
 import { scrollToTop } from '../utils/scrollUtils';
+import { getUserName } from '../utils/storageUtils';
+import { 
+  trackAssignmentAttempt, 
+  trackAssignmentCompletion, 
+  trackQuestionAnswer, 
+  trackEngagementTime,
+  trackPageView 
+} from '../utils/analytics';
 import {
   createInitialQuizState,
   updateQuizStateWithAnswer,
@@ -52,6 +60,14 @@ export default function QuizInterface({
       const initialState = createInitialQuizState(questions, assignmentId, mode);
       setQuizState(initialState);
       setIsLoading(false);
+
+      // Track assignment attempt
+      const userName = getUserName();
+      const assignmentName = assignmentId === 'mega' ? 'Mega Test' : `Assignment ${assignmentId}`;
+      trackAssignmentAttempt(assignmentId, assignmentName, userName, mode);
+      
+      // Track page view
+      trackPageView(window.location.href, userName);
     }
   }, [questions, assignment, assignmentNumber, mode]);
 
@@ -103,7 +119,29 @@ export default function QuizInterface({
       selectedOptions
     );
     setQuizState(updatedState);
-  }, [quizState]);
+
+    // Track question answer
+    const userName = getUserName();
+    const currentQ = getCurrentQuestion(quizState);
+    if (currentQ && selectedOptions.length > 0) {
+      // Check if answer is correct
+      const correctOptions = currentQ.options.filter(opt => opt.iscorrect);
+      const selectedCorrect = selectedOptions.filter(selected => 
+        correctOptions.some(correct => correct.optionnumber === selected.optionNumber)
+      );
+      const isCorrect = selectedCorrect.length === correctOptions.length && 
+                       selectedCorrect.length === selectedOptions.length;
+      
+      const assignmentId = assignment || assignmentNumber || 'mega';
+      trackQuestionAnswer(
+        currentQ.questionnumber, 
+        isCorrect, 
+        userName, 
+        assignmentId, 
+        quizState.currentQuestionIndex + 1
+      );
+    }
+  }, [quizState, assignment, assignmentNumber]);
 
   const handleQuizComplete = useCallback((nextState) => {
     const timeElapsed = calculateTimeElapsed(nextState);
@@ -113,31 +151,50 @@ export default function QuizInterface({
     };
     
     setCompletionData(completionInfo);
+
+    // Track quiz completion
+    const userName = getUserName();
+    const assignmentId = assignment || assignmentNumber || 'mega';
+    const assignmentName = assignmentId === 'mega' ? 'Mega Test' : `Assignment ${assignmentId}`;
+    
+    // Calculate score
+    const score = nextState.answers.reduce((total, answer) => {
+      if (answer && answer.length > 0) {
+        const question = nextState.questions.find(q => q.questionnumber === answer[0].questionNumber);
+        if (question) {
+          const correctOptions = question.options.filter(opt => opt.iscorrect);
+          const selectedCorrect = answer.filter(a => 
+            correctOptions.some(correct => correct.optionnumber === a.optionNumber)
+          );
+          return total + (selectedCorrect.length === correctOptions.length && 
+                        selectedCorrect.length === answer.length ? 1 : 0);
+        }
+      }
+      return total;
+    }, 0);
+
+    // Track completion
+    trackAssignmentCompletion(
+      assignmentId, 
+      assignmentName, 
+      userName, 
+      mode, 
+      score, 
+      nextState.questions.length
+    );
+
+    // Track engagement time
+    trackEngagementTime(assignmentId, Math.floor(timeElapsed / 1000), userName);
     
     if (onComplete) {
       // For mega test, pass score and total questions
       if (assignmentNumber === 'mega' || assignment === 'mega') {
-        const score = nextState.answers.reduce((total, answer) => {
-          if (answer && answer.length > 0) {
-            const question = nextState.questions.find(q => q.questionnumber === answer[0].questionNumber);
-            if (question) {
-              const correctOptions = question.options.filter(opt => opt.iscorrect);
-              const selectedCorrect = answer.filter(a => 
-                correctOptions.some(correct => correct.optionnumber === a.optionNumber)
-              );
-              return total + (selectedCorrect.length === correctOptions.length && 
-                            selectedCorrect.length === answer.length ? 1 : 0);
-            }
-          }
-          return total;
-        }, 0);
-        
         onComplete(score, nextState.questions.length, nextState.answers);
       } else {
         onComplete(completionInfo);
       }
     }
-  }, [onComplete, assignmentNumber, assignment]);
+  }, [onComplete, assignmentNumber, assignment, mode]);
 
   // Handle next question navigation
   const handleNext = useCallback(() => {

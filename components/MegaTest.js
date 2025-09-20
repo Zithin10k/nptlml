@@ -11,6 +11,7 @@ import Card from './Card';
 import Button from './Button';
 import { loadQuestions } from '../utils/dataLoader';
 import { getUserName } from '../utils/storageUtils';
+import { trackMegaTestAttempt } from '../utils/analytics';
 
 export default function MegaTest({ className = '' }) {
   const router = useRouter();
@@ -34,20 +35,23 @@ export default function MegaTest({ className = '' }) {
 
   const handleStartMegaTest = async () => {
     setIsStarting(true);
-    
+
+    // Track mega test attempt
+    trackMegaTestAttempt(userName, 'practice');
+
     // Navigate to mega test page
     router.push('/quiz/mega/practice');
   };
 
   return (
-    <Card 
+    <Card
       className={`relative overflow-hidden bg-gradient-to-br from-yellow-50 to-orange-50 border-yellow-300 hover:border-yellow-400 hover:shadow-xl transition-all duration-300 ${className}`}
       padding="lg"
     >
       {/* Sparkle decorations */}
       <div className="absolute top-4 right-4 w-4 h-4 bg-yellow-400 rounded-full sparkle-animation"></div>
-      <div className="absolute top-8 right-8 w-2 h-2 bg-orange-400 rounded-full sparkle-animation" style={{animationDelay: '0.5s'}}></div>
-      <div className="absolute bottom-6 left-6 w-3 h-3 bg-yellow-500 rounded-full sparkle-animation" style={{animationDelay: '1s'}}></div>
+      <div className="absolute top-8 right-8 w-2 h-2 bg-orange-400 rounded-full sparkle-animation" style={{ animationDelay: '0.5s' }}></div>
+      <div className="absolute bottom-6 left-6 w-3 h-3 bg-yellow-500 rounded-full sparkle-animation" style={{ animationDelay: '1s' }}></div>
 
       <div className="text-center relative z-10">
         {/* Mega Test Title */}

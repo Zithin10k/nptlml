@@ -34,9 +34,28 @@ class ErrorBoundary extends React.Component {
       errorInfo: errorInfo
     });
 
-    // Report error to monitoring service if available
-    if (typeof window !== 'undefined' && window.reportError) {
-      window.reportError(error);
+    // Track error with Google Analytics
+    if (typeof window !== 'undefined') {
+      // Import analytics dynamically to avoid SSR issues
+      import('../utils/analytics').then(({ trackError }) => {
+        import('../utils/storageUtils').then(({ getUserName }) => {
+          const userName = getUserName();
+          trackError(
+            'component_error',
+            error.message || error.toString(),
+            userName,
+            {
+              componentStack: errorInfo.componentStack,
+              errorBoundary: 'ErrorBoundary'
+            }
+          );
+        });
+      });
+
+      // Report error to monitoring service if available
+      if (window.reportError) {
+        window.reportError(error);
+      }
     }
   }
 
