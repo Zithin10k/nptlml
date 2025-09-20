@@ -320,14 +320,14 @@ export default function QuizInterface({
           )}
         </div>
 
-        {/* Compact Navigation Footer */}
-        <div className="single-viewport-footer">
+        {/* Floating Translucent Navigation */}
+        <div className="floating-nav">
           <div className="flex justify-between items-center gap-2">
             <Button
               onClick={handlePrevious}
               disabled={!canGoPrevious}
               variant="outline"
-              className="px-3 py-1.5 text-sm"
+              className="floating-nav-button-outline px-3 py-2 text-sm font-medium"
             >
               ← Prev
             </Button>
@@ -336,7 +336,7 @@ export default function QuizInterface({
               <Button
                 onClick={handleSkip}
                 variant="secondary"
-                className="px-3 py-1.5 text-sm"
+                className="floating-nav-button-outline px-3 py-2 text-sm"
               >
                 Skip
               </Button>
@@ -346,7 +346,7 @@ export default function QuizInterface({
               onClick={handleNext}
               disabled={!canGoNext}
               variant="primary"
-              className="px-3 py-1.5 text-sm font-semibold"
+              className="floating-nav-button px-4 py-2 text-sm font-semibold"
             >
               {nextButtonText} →
             </Button>

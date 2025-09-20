@@ -678,3 +678,67 @@ html {
   padding: 0.25rem 0.5rem !important;
   font-size: 0.75rem !important;
 }
+
+/* Floating translucent navigation */
+.floating-nav {
+  position: fixed !important;
+  bottom: 1rem !important;
+  left: 1rem !important;
+  right: 1rem !important;
+  z-index: 50 !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+  padding: 0.75rem 1rem !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.floating-nav:hover {
+  background: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Floating nav buttons */
+.floating-nav-button {
+  background: rgba(59, 130, 246, 0.9) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(59, 130, 246, 0.3) !important;
+  transition: all 0.2s ease !important;
+}
+
+.floating-nav-button:hover {
+  background: rgba(37, 99, 235, 0.95) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
+}
+
+.floating-nav-button:disabled {
+  background: rgba(156, 163, 175, 0.6) !important;
+  border-color: rgba(156, 163, 175, 0.3) !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.floating-nav-button-outline {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(59, 130, 246, 0.4) !important;
+  color: #3b82f6 !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+
+.floating-nav-button-outline:hover {
+  background: rgba(59, 130, 246, 0.1) !important;
+  border-color: rgba(59, 130, 246, 0.6) !important;
+}
+
+.floating-nav-button-outline:disabled {
+  background: rgba(255, 255, 255, 0.5) !important;
+  border-color: rgba(156, 163, 175, 0.3) !important;
+  color: rgba(156, 163, 175, 0.8) !important;
+}
