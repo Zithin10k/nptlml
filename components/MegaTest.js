@@ -12,6 +12,7 @@ import Button from './Button';
 import { loadQuestions } from '../utils/dataLoader';
 import { getUserName } from '../utils/storageUtils';
 import { trackMegaTestAttempt } from '../utils/analytics';
+import { logTestStart } from '../utils/firebase';
 
 export default function MegaTest({ className = '' }) {
   const router = useRouter();
@@ -38,6 +39,9 @@ export default function MegaTest({ className = '' }) {
 
     // Track mega test attempt
     trackMegaTestAttempt(userName, 'practice');
+    
+    // Log mega test start to Firebase
+    logTestStart(userName, 'Mega Test', totalQuestions);
 
     // Navigate to mega test page
     router.push('/quiz/mega/practice');

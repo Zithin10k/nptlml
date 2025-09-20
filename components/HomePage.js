@@ -9,8 +9,9 @@
 import { useState, useEffect } from 'react';
 import { getUserName, isFirstTimeUser } from '../utils/storageUtils';
 import { getPersonalizedGreeting } from '../utils/personalizationUtils';
-import { loadQuestions, DataLoadError, DataValidationError } from '../utils/dataLoader';
+import { loadQuestions, DataValidationError } from '../utils/dataLoader';
 import { trackPageView } from '../utils/analytics';
+import { signInUser, onAuthStateChange } from '../utils/firebase';
 import NamePrompt from './NamePrompt';
 import NameChangeModal from './NameChangeModal';
 import Container from './Container';
@@ -132,9 +133,18 @@ export default function HomePage() {
     }
   }, [userName, isLoading]);
 
-  const handleNameSubmit = (name) => {
-    setUserName(name);
-    setShowNamePrompt(false);
+  const handleNameSubmit = async (name) => {
+    try {
+      // Sign in user with Firebase
+      await signInUser(name);
+      setUserName(name);
+      setShowNamePrompt(false);
+    } catch (error) {
+      console.error('Error signing in user:', error);
+      // Still allow local usage if Firebase fails
+      setUserName(name);
+      setShowNamePrompt(false);
+    }
   };
 
   const handleNameChange = (name) => {

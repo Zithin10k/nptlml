@@ -1013,22 +1013,22 @@
         "options": [
             {
                 "optionnumber": "A",
-                "optiontext": "P(D1)*P(D2|D1)*P(S1|D1)*P(S2|D1)*P(S3|D2)",
+                "optiontext": "$P(D1)*P(D2|D1)*P(S1|D1)*P(S2|D1)*P(S3|D2)$",
                 "iscorrect": false
             },
             {
                 "optionnumber": "B",
-                "optiontext": "P(D1)*P(D2)*P(S1|D1)*P(S2|D1)*P(S3|D1,D2)",
+                "optiontext": "$P(D1)*P(D2)*P(S1|D1)*P(S2|D1)*P(S3|D1,D2)$",
                 "iscorrect": false
             },
             {
                 "optionnumber": "C",
-                "optiontext": "P(D1)*P(D2)*P(S1|D2)*P(S2|D2)*P(S3|D2)",
+                "optiontext": "$P(D1)*P(D2)*P(S1|D2)*P(S2|D2)*P(S3|D2)$",
                 "iscorrect": false
             },
             {
                 "optionnumber": "D",
-                "optiontext": "P(D1)*P(D2)*P(S1|D1)*P(S2|D1,D2)*P(S3|D2)",
+                "optiontext": "$P(D1)*P(D2)*P(S1|D1)*P(S2|D1,D2)*P(S3|D2)$",
                 "iscorrect": true
             }
         ]

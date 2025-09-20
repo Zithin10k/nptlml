@@ -23,6 +23,7 @@ import {
   trackEngagementTime,
   trackPageView 
 } from '../utils/analytics';
+import { logTestStart, logTestComplete } from '../utils/firebase';
 import {
   createInitialQuizState,
   updateQuizStateWithAnswer,
@@ -65,6 +66,9 @@ export default function QuizInterface({
       const userName = getUserName();
       const assignmentName = assignmentId === 'mega' ? 'Mega Test' : `Assignment ${assignmentId}`;
       trackAssignmentAttempt(assignmentId, assignmentName, userName, mode);
+      
+      // Log test start to Firebase
+      logTestStart(userName, assignmentName, questions.length);
       
       // Track page view
       trackPageView(window.location.href, userName);
@@ -182,6 +186,9 @@ export default function QuizInterface({
       score, 
       nextState.questions.length
     );
+
+    // Log test completion to Firebase
+    logTestComplete(userName, assignmentName, score, nextState.questions.length, Math.floor(timeElapsed / 1000));
 
     // Track engagement time
     trackEngagementTime(assignmentId, Math.floor(timeElapsed / 1000), userName);
