@@ -39,14 +39,14 @@ export const signInUser = async (userName) => {
   try {
     const userCredential = await signInAnonymously(auth);
     const user = userCredential.user;
-    
+
     // Log the login event
     await logUserEvent('user_login', {
       user_name: userName,
       user_id: user.uid,
       timestamp: new Date().toISOString()
     });
-    
+
     // Track with Analytics
     if (analytics) {
       logEvent(analytics, 'login', {
@@ -54,7 +54,7 @@ export const signInUser = async (userName) => {
         user_name: userName
       });
     }
-    
+
     return { user, userName };
   } catch (error) {
     console.error('Error signing in:', error);
@@ -78,7 +78,7 @@ export const logUserEvent = async (eventType, eventData) => {
 export const logTestStart = async (userName, testType, questionCount) => {
   const user = auth.currentUser;
   if (!user) return;
-  
+
   const eventData = {
     user_name: userName,
     user_id: user.uid,
@@ -86,9 +86,9 @@ export const logTestStart = async (userName, testType, questionCount) => {
     question_count: questionCount,
     timestamp: new Date().toISOString()
   };
-  
+
   await logUserEvent('test_start', eventData);
-  
+
   // Track with Analytics
   if (analytics) {
     logEvent(analytics, 'test_start', {
@@ -102,7 +102,7 @@ export const logTestStart = async (userName, testType, questionCount) => {
 export const logTestComplete = async (userName, testType, score, totalQuestions, timeSpent) => {
   const user = auth.currentUser;
   if (!user) return;
-  
+
   const eventData = {
     user_name: userName,
     user_id: user.uid,
@@ -113,9 +113,9 @@ export const logTestComplete = async (userName, testType, score, totalQuestions,
     percentage: Math.round((score / totalQuestions) * 100),
     timestamp: new Date().toISOString()
   };
-  
+
   await logUserEvent('test_complete', eventData);
-  
+
   // Track with Analytics
   if (analytics) {
     logEvent(analytics, 'test_complete', {
@@ -127,6 +127,55 @@ export const logTestComplete = async (userName, testType, score, totalQuestions,
       user_name: userName
     });
   }
+};
+
+// Check if user is currently authenticated
+export const isUserAuthenticated = () => {
+  return auth.currentUser !== null;
+};
+
+// Auto-login function for users with stored names
+export const autoLoginIfNeeded = async () => {
+  // Import here to avoid circular dependency
+  const { getUserName } = await import('./storageUtils');
+
+  const storedName = getUserName();
+
+  // If user has a stored name but isn't authenticated, auto-login
+  if (storedName && !isUserAuthenticated()) {
+    try {
+      console.log('Auto-logging in user with stored name:', storedName);
+      await signInUser(storedName);
+      return { success: true, userName: storedName, autoLoggedIn: true };
+    } catch (error) {
+      console.error('Auto-login failed:', error);
+      return { success: false, error, userName: storedName };
+    }
+  }
+
+  // Return current state if already authenticated or no stored name
+  return {
+    success: isUserAuthenticated(),
+    userName: storedName,
+    alreadyAuthenticated: isUserAuthenticated(),
+    autoLoggedIn: false
+  };
+};
+
+// Ensure user is authenticated (auto-login if needed)
+export const ensureAuthenticated = async () => {
+  const result = await autoLoginIfNeeded();
+  if (!result.success && result.userName) {
+    // If auto-login failed but we have a stored name, try again
+    try {
+      await signInUser(result.userName);
+      return { success: true, userName: result.userName, retried: true };
+    } catch (error) {
+      console.error('Retry authentication failed:', error);
+      return { success: false, error, userName: result.userName };
+    }
+  }
+  return result;
 };
 
 // Auth state observer

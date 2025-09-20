@@ -11,7 +11,7 @@ import { getUserName, isFirstTimeUser } from '../utils/storageUtils';
 import { getPersonalizedGreeting } from '../utils/personalizationUtils';
 import { loadQuestions, DataValidationError } from '../utils/dataLoader';
 import { trackPageView } from '../utils/analytics';
-import { signInUser, onAuthStateChange } from '../utils/firebase';
+import { signInUser, onAuthStateChange, autoLoginIfNeeded } from '../utils/firebase';
 import NamePrompt from './NamePrompt';
 import NameChangeModal from './NameChangeModal';
 import Container from './Container';
@@ -85,17 +85,33 @@ export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [assignmentData, setAssignmentData] = useState([]);
   const [dataError, setDataError] = useState(null);
+  const [authState, setAuthState] = useState('loading'); // 'loading', 'authenticated', 'unauthenticated'
 
   useEffect(() => {
     // Initialize user name and load assignment data
     const initializeApp = async () => {
       try {
-        // Check user name
-        if (isFirstTimeUser()) {
+        // Auto-login if user has stored name but isn't authenticated
+        const loginResult = await autoLoginIfNeeded();
+        
+        if (loginResult.success && loginResult.userName) {
+          setUserName(loginResult.userName);
+          if (loginResult.alreadyAuthenticated) {
+            console.log('User already authenticated');
+          } else {
+            console.log('Auto-login successful for:', loginResult.userName);
+          }
+        } else if (isFirstTimeUser()) {
           setShowNamePrompt(true);
         } else {
+          // User has stored name but auto-login failed
           const storedName = getUserName();
-          setUserName(storedName || '');
+          if (storedName) {
+            setUserName(storedName);
+            console.warn('Auto-login failed, using stored name locally');
+          } else {
+            setShowNamePrompt(true);
+          }
         }
 
         // Load questions to determine available assignments
@@ -126,6 +142,21 @@ export default function HomePage() {
     initializeApp();
   }, []);
 
+  // Set up auth state listener
+  useEffect(() => {
+    const unsubscribe = onAuthStateChange((user) => {
+      if (user) {
+        setAuthState('authenticated');
+        console.log('User authenticated:', user.uid);
+      } else {
+        setAuthState('unauthenticated');
+        console.log('User not authenticated');
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   // Track page view when component mounts and when userName changes
   useEffect(() => {
     if (!isLoading) {
@@ -135,8 +166,10 @@ export default function HomePage() {
 
   const handleNameSubmit = async (name) => {
     try {
-      // Sign in user with Firebase
-      await signInUser(name);
+      // Sign in user with Firebase (only if not already authenticated)
+      if (authState !== 'authenticated') {
+        await signInUser(name);
+      }
       setUserName(name);
       setShowNamePrompt(false);
     } catch (error) {

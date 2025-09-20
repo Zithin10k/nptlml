@@ -23,7 +23,7 @@ import {
   trackEngagementTime,
   trackPageView 
 } from '../utils/analytics';
-import { logTestStart, logTestComplete } from '../utils/firebase';
+import { logTestStart, logTestComplete, ensureAuthenticated } from '../utils/firebase';
 import {
   createInitialQuizState,
   updateQuizStateWithAnswer,
@@ -56,23 +56,35 @@ export default function QuizInterface({
 
   // Initialize quiz state when component mounts
   useEffect(() => {
-    if (questions && questions.length > 0) {
-      const assignmentId = assignment || assignmentNumber || 'mega';
-      const initialState = createInitialQuizState(questions, assignmentId, mode);
-      setQuizState(initialState);
-      setIsLoading(false);
+    const initializeQuiz = async () => {
+      if (questions && questions.length > 0) {
+        // Ensure user is authenticated before starting quiz
+        const authResult = await ensureAuthenticated();
+        if (authResult.autoLoggedIn) {
+          console.log('User auto-logged in for quiz');
+        } else if (authResult.retried) {
+          console.log('User authentication retried successfully');
+        }
+        
+        const assignmentId = assignment || assignmentNumber || 'mega';
+        const initialState = createInitialQuizState(questions, assignmentId, mode);
+        setQuizState(initialState);
+        setIsLoading(false);
 
-      // Track assignment attempt
-      const userName = getUserName();
-      const assignmentName = assignmentId === 'mega' ? 'Mega Test' : `Assignment ${assignmentId}`;
-      trackAssignmentAttempt(assignmentId, assignmentName, userName, mode);
-      
-      // Log test start to Firebase
-      logTestStart(userName, assignmentName, questions.length);
-      
-      // Track page view
-      trackPageView(window.location.href, userName);
-    }
+        // Track assignment attempt
+        const userName = getUserName();
+        const assignmentName = assignmentId === 'mega' ? 'Mega Test' : `Assignment ${assignmentId}`;
+        trackAssignmentAttempt(assignmentId, assignmentName, userName, mode);
+        
+        // Log test start to Firebase
+        logTestStart(userName, assignmentName, questions.length);
+        
+        // Track page view
+        trackPageView(window.location.href, userName);
+      }
+    };
+
+    initializeQuiz();
   }, [questions, assignment, assignmentNumber, mode]);
 
   // Update current time every second for timer display
@@ -162,16 +174,16 @@ export default function QuizInterface({
     const assignmentName = assignmentId === 'mega' ? 'Mega Test' : `Assignment ${assignmentId}`;
     
     // Calculate score
-    const score = nextState.answers.reduce((total, answer) => {
-      if (answer && answer.length > 0) {
-        const question = nextState.questions.find(q => q.questionnumber === answer[0].questionNumber);
+    const score = nextState.userAnswers.reduce((total, answer, index) => {
+      if (answer && answer.selectedOptions && answer.selectedOptions.length > 0) {
+        const question = nextState.questions[index];
         if (question) {
           const correctOptions = question.options.filter(opt => opt.iscorrect);
-          const selectedCorrect = answer.filter(a => 
-            correctOptions.some(correct => correct.optionnumber === a.optionNumber)
+          const selectedCorrect = answer.selectedOptions.filter(selectedOpt => 
+            correctOptions.some(correct => correct.optionnumber === selectedOpt.optionNumber)
           );
           return total + (selectedCorrect.length === correctOptions.length && 
-                        selectedCorrect.length === answer.length ? 1 : 0);
+                        selectedCorrect.length === answer.selectedOptions.length ? 1 : 0);
         }
       }
       return total;
@@ -196,7 +208,7 @@ export default function QuizInterface({
     if (onComplete) {
       // For mega test, pass score and total questions
       if (assignmentNumber === 'mega' || assignment === 'mega') {
-        onComplete(score, nextState.questions.length, nextState.answers);
+        onComplete(score, nextState.questions.length, nextState.userAnswers);
       } else {
         onComplete(completionInfo);
       }
