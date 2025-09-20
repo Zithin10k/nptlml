@@ -73,7 +73,7 @@ export default function RewardModal({ isOpen, onClose, score, totalQuestions }) 
                       CONGRATULATIONS!
                     </div>
                     <div className="text-white text-lg mb-3">
-                      You've earned your reward!
+                      You&apos;ve earned your reward!
                     </div>
                     <div className="flex items-center justify-center space-x-3 text-white font-bold text-xl">
                       <span>200 Coins</span>
