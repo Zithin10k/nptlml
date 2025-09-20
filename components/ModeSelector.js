@@ -98,54 +98,62 @@ export default function ModeSelector({ assignmentNumber, onBack }) {
       </div>
 
       {/* Mode Selection Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
+      <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-12 max-w-4xl mx-auto">
         {LEARNING_MODES.map((mode) => {
           const colors = getColorClasses(mode.color);
           
           return (
             <Card 
               key={mode.id}
-              className={`border-2 ${colors.border} card-hover min-h-[400px] sm:min-h-[380px] animate-fadeIn`}
+              className={`border-2 ${colors.border} card-hover animate-fadeIn hover:shadow-lg transition-all duration-200`}
               padding="sm"
             >
-              <div className="p-4 sm:p-6 text-center h-full flex flex-col">
-                {/* Mode Icon */}
-                <div className={`text-5xl sm:text-6xl mb-3 sm:mb-4 ${colors.icon}`}>
-                  {mode.icon}
+              <div className="p-4 sm:p-6">
+                {/* Top Row: Icon Left, Title Right */}
+                <div className="flex items-center gap-6 mb-4">
+                  {/* Mode Icon - Left Side */}
+                  <div className="flex-shrink-0">
+                    <div className={`w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl flex items-center justify-center border-2 ${colors.border}`}>
+                      <span className="text-3xl sm:text-4xl">
+                        {mode.icon}
+                      </span>
+                    </div>
+                  </div>
+                  
+                  {/* Mode Title - Right Side */}
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
+                      {mode.title}
+                    </h3>
+                  </div>
                 </div>
                 
-                {/* Mode Title */}
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">
-                  {mode.title}
-                </h3>
-                
-                {/* Mode Description */}
-                <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed flex-grow">
-                  {mode.description}
-                </p>
+                {/* Description Paragraph - Below the left-right layout */}
+                <div className="mb-4">
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                    {mode.description}
+                  </p>
+                </div>
                 
                 {/* Features List */}
-                <div className="mb-6 sm:mb-8">
-                  <h4 className={`text-xs sm:text-sm font-semibold ${colors.accent} mb-2 sm:mb-3 uppercase tracking-wide`}>
-                    Features
-                  </h4>
-                  <ul className="text-xs sm:text-sm text-gray-600 space-y-1 sm:space-y-2">
+                <div className="mb-4">
+                  <ul className="text-xs sm:text-sm text-gray-600 space-y-1 flex flex-wrap gap-x-6 gap-y-1">
                     {mode.features.map((feature, index) => (
-                      <li key={index} className="flex items-center justify-center">
+                      <li key={index} className="flex items-center">
                         <span className={`text-xs ${colors.accent} mr-2`}>✓</span>
-                        <span className="text-center">{feature}</span>
+                        <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 
                 {/* Select Button */}
-                <div className="mt-auto">
+                <div className="flex justify-start">
                   <button
                     onClick={() => handleModeSelect(mode.id)}
-                    className={`${colors.button} text-white border-transparent w-full px-6 py-4 text-lg min-h-[52px] inline-flex items-center justify-center border rounded-lg font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-opacity-50 touch-manipulation select-none`}
+                    className={`${colors.button} text-white border-transparent px-6 py-3 text-base min-h-[48px] inline-flex items-center justify-center border rounded-lg font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-opacity-50 touch-manipulation select-none`}
                   >
-                    Start {mode.title}
+                    Start {mode.title} →
                   </button>
                 </div>
               </div>
