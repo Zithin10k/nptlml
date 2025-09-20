@@ -202,8 +202,8 @@ function validateQuestion(question, index = 0) {
   // Validate assignment number format
   if (question.assignmentnumber) {
     const assignmentNum = parseInt(question.assignmentnumber);
-    if (isNaN(assignmentNum) || assignmentNum < 1 || assignmentNum > 7) {
-      errors.push('Assignment number must be between 1 and 7');
+    if (isNaN(assignmentNum) || assignmentNum < 1) {
+      errors.push('Assignment number must be a positive integer');
     }
   }
 

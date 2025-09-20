@@ -629,6 +629,7 @@ html {
   flex: 1 !important;
   overflow-y: auto !important;
   padding: 0.5rem !important;
+  padding-bottom: 6rem !important; /* Extra space for floating navigation */
 }
 
 .single-viewport-header {

@@ -63,7 +63,7 @@ export default function MegaTest({ className = '' }) {
         {/* Description */}
         <div className="mb-6 space-y-2">
           <p className="text-gray-700 font-medium">
-            Test your knowledge across all 7 weeks
+            Test your knowledge across all 8 weeks
           </p>
           <p className="text-sm text-gray-600">
             {totalQuestions} questions • All topics covered

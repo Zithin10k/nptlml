@@ -84,7 +84,7 @@ export default function AssignmentPage() {
               {!isValidAssignmentNumber ? 'Invalid Assignment' : 'Assignment Unavailable'}
             </h1>
             <p className="text-gray-600 mb-8">
-              {validationError || 'Assignment number must be between 1 and 7.'}
+              {validationError || 'Assignment number must be between 1 and 8.'}
             </p>
             <button
               onClick={handleBack}

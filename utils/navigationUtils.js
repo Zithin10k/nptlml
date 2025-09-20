@@ -16,7 +16,7 @@ export const ROUTES = {
 /**
  * Valid route parameters
  */
-export const VALID_ASSIGNMENTS = [1, 2, 3, 4, 5, 6, 7];
+export const VALID_ASSIGNMENTS = [1, 2, 3, 4, 5, 6, 7, 8];
 export const VALID_MODES = ['learn', 'test-easy', 'test-difficult'];
 
 /**
@@ -48,7 +48,7 @@ export function validateQuizParams(assignment, mode) {
   const errors = [];
   
   if (!isValidAssignment(assignment)) {
-    errors.push('Assignment must be between 1 and 7');
+    errors.push('Assignment must be between 1 and 8');
   }
   
   if (!isValidMode(mode)) {

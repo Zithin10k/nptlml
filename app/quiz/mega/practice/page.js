@@ -29,10 +29,10 @@ export default function MegaTestPage() {
         setIsLoading(true);
         const allQuestions = await loadQuestions();
         
-        // Get questions from all assignments (1-7)
+        // Get questions from all assignments (1-8)
         const megaQuestions = allQuestions.filter(q => {
           const assignmentNum = parseInt(q.assignmentnumber);
-          return assignmentNum >= 1 && assignmentNum <= 7;
+          return assignmentNum >= 1 && assignmentNum <= 8;
         });
 
         if (megaQuestions.length === 0) {
@@ -111,7 +111,7 @@ export default function MegaTestPage() {
         assignmentNumber="mega"
         mode="practice"
         title="MEGA TEST - Ultimate ML Challenge"
-        subtitle={`All 7 weeks • ${questions.length} questions • Score 60+ for rewards!`}
+        subtitle={`All 8 weeks • ${questions.length} questions • Score 60+ for rewards!`}
         onComplete={handleQuizComplete}
         showProgress={true}
         allowReview={true}

@@ -55,6 +55,11 @@ const getDefaultAssignmentData = () => [
     number: 7,
     title: "Assignment 7",
     description: "Advanced topics and real-world ML applications"
+  },
+  {
+    number: 8,
+    title: "Assignment 8",
+    description: "Advanced topics and real-world ML applications"
   }
 ];
 
