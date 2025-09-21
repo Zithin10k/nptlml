@@ -180,7 +180,7 @@ export default function QuizInterface({
         if (question) {
           const correctOptions = question.options.filter(opt => opt.iscorrect);
           const selectedCorrect = answer.selectedOptions.filter(selectedOpt => 
-            correctOptions.some(correct => correct.optionnumber === selectedOpt.optionNumber)
+            correctOptions.some(correct => correct.optionnumber === selectedOpt)
           );
           return total + (selectedCorrect.length === correctOptions.length && 
                         selectedCorrect.length === answer.selectedOptions.length ? 1 : 0);

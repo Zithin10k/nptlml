@@ -119,7 +119,7 @@ export default function MegaTestPage() {
         assignmentNumber="mega"
         mode="practice"
         title="MEGA TEST - Ultimate ML Challenge"
-        subtitle={`All 8 weeks • ${questions.length} questions • Score 60+ for rewards!`}
+        subtitle={`All 8 weeks • ${questions.length} questions • Score 1+ for rewards!`}
         onComplete={handleQuizComplete}
         showProgress={true}
         allowReview={true}

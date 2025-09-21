@@ -14,7 +14,7 @@ export default function RewardModal({ isOpen, onClose, score, totalQuestions }) 
 
   if (!isOpen) return null;
 
-  const isEligible = score >= 60;
+  const isEligible = score >= 1;
   const percentage = Math.round((score / totalQuestions) * 100);
 
   const handleClaim = async () => {
@@ -117,7 +117,7 @@ export default function RewardModal({ isOpen, onClose, score, totalQuestions }) 
                 Almost there!
               </div>
               <div className="text-sm text-gray-600">
-                You need 60+ correct answers to earn the reward.
+                You need 1+ correct answers to earn the reward.
                 <br />
                 Try again to claim your prize!
               </div>

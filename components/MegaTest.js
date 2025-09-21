@@ -84,7 +84,7 @@ export default function MegaTest({ className = '' }) {
             SPECIAL REWARD
           </div>
           <div className="text-sm text-gray-700 mb-2">
-            Score 60+ questions correct and win:
+            Score 1+ questions correct and win:
           </div>
           <div className="flex items-center justify-center space-x-2 text-orange-600 font-bold">
             <span className="text-2xl">200 Coins</span>
